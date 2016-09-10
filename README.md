@@ -2,6 +2,11 @@
 
 An experiment to see if we can write a scene release tokeniser for fun.
 
+[![Build Status](
+http://img.shields.io/travis/matsimitsu/release_parser.svg?style=flat
+)](https://travis-ci.org/matsimitsu/release_parser)
+
+
 ## Installation
 
 In your Gemfile:
