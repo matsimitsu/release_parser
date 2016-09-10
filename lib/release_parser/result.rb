@@ -28,8 +28,7 @@ module ReleaseParser
       @tokens.each do |token|
         break unless [
           ReleaseParser::Tokens::Unknown,
-          ReleaseParser::Tokens::Separator,
-          ReleaseParser::Tokens::Year
+          ReleaseParser::Tokens::Separator
         ].include? token.class
 
         title_tokens << token

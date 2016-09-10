@@ -6,7 +6,7 @@ describe 'ReleaseParser' do
   let(:result) { parser.parse }
 
   it "should parse a tv release" do
-    expect( result.title         ).to eql('Looped (2016)')
+    expect( result.title         ).to eql('Looped')
     expect( result.season        ).to be 1
     expect( result.episode       ).to be 14
     expect( result.resolution    ).to eq '720p'

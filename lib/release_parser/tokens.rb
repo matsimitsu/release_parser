@@ -120,7 +120,7 @@ module ReleaseParser
     end
 
     class Year < Tokens::Base
-      REGEX = /^(\d{4})/i
+      REGEX = /^[\(]?(\d{4})[\)]?/i
 
       def normalized_result
         @match[1].to_i
