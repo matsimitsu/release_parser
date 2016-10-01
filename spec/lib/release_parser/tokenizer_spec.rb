@@ -85,4 +85,28 @@ describe ReleaseParser::Tokens do
     end
   end
 
+  context "With a tv show from a specific country" do
+    let(:input) { "Last Man Standing US S06E02 HDTV x264-KILLERS" }
+
+    it "should tokenize show to tokens" do
+      expect( result ).to eql([
+        ReleaseParser::Tokens::Unknown,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Unknown,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Unknown,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Country,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Season,
+        ReleaseParser::Tokens::Episode,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Source,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Codec,
+        ReleaseParser::Tokens::ReleaseGroup
+      ])
+    end
+  end
+
 end

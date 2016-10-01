@@ -91,6 +91,13 @@ module ReleaseParser
       /ix
     end
 
+    class Country < Tokens::Base
+      REGEX = /
+        ^(?<usa>US)|
+        ^(?<uk>UK)
+      /x
+    end
+
     class Season < Tokens::Base
       REGEX =/^(S|Season |Season)(\d+)/i
 

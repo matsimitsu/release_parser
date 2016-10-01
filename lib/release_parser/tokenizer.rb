@@ -41,6 +41,8 @@ module ReleaseParser
           add_token(match)
         when match = Tokens::Language.new
           add_token(match)
+        when match = Tokens::Country.new
+          add_token(match)
         when match = Tokens::Freeleech.new
           add_token(match)
 
