@@ -65,6 +65,7 @@ module ReleaseParser
     class Source < Tokens::Base
       REGEX = /
         ^(?<hdtv>HDTV)|
+        ^(?<hdrip>HDRip)|
         ^(?<bluray>BluRay|Blu-Ray|HDDVD|BD)|
         ^(?<webdl>WEB[-_. ]DL|WEBDL|WebRip|iTunesHD|WebHD|WEB)|
         ^(?<bluray>BDRip)|
@@ -89,6 +90,14 @@ module ReleaseParser
         ^(?<dutch>nl\W?subs?)|
         ^(?<hungarian>\b(?:HUNDUB|HUN)\b)
       /ix
+    end
+
+    class HardCodedSubs < Tokens::Base
+      REGEX = /^HC /i
+
+      def normalized_result
+        true
+      end
     end
 
     class Country < Tokens::Base

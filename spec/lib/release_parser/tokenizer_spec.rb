@@ -109,4 +109,27 @@ describe ReleaseParser::Tokens do
     end
   end
 
+  context "With hardcoded subs" do
+    let(:input) { "Suicide Squad 2016 720p HC HDRip x264 AAC-ETRG" }
+
+    it "should tokenize show to tokens" do
+      expect( result ).to eql([
+        ReleaseParser::Tokens::Unknown,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Unknown,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Year,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Resolution,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::HardCodedSubs,
+        ReleaseParser::Tokens::Source,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Codec,
+        ReleaseParser::Tokens::Separator,
+        ReleaseParser::Tokens::Unknown,
+        ReleaseParser::Tokens::ReleaseGroup
+      ])
+    end
+  end
 end

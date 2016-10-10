@@ -45,7 +45,8 @@ module ReleaseParser
           add_token(match)
         when match = Tokens::Freeleech.new
           add_token(match)
-
+        when match = Tokens::HardCodedSubs.new
+          add_token(match)
         # Otherwise, add the current character to the "unknown" pile
         else
           @unknown << chars[0]
